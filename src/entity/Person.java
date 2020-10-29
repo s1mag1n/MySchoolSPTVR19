@@ -5,36 +5,34 @@
  */
 package entity;
 
+import java.io.Serializable;
+
 /**
  *
  * @author user
  */
-public class Person {
+public class Person implements Serializable{
     private String firstname;
     private String lastname;
     private String phone;
     private String role;
-    
-    public Person() {       
+
+    public Person() {
     }
-    
+
     public Person(String firstname, String lastname, String phone, String role) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.phone = phone;
         this.role = role;
-    }    
+    }
 
-    
-    
-    @Override
-    public String toString() {
-        return "Person{" 
-                + "firstname=" + firstname 
-                + ", lastname=" + lastname 
-                + ", phone=" + phone 
-                + ", role" + 
-                + '}';
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getFirstname() {
@@ -61,12 +59,14 @@ public class Person {
         this.phone = phone;
     }
 
-    public String getRole() {
-        return role;
+    @Override
+    public String toString() {
+        return "Person{" 
+                + "firstname=" + firstname 
+                + ", lastname=" + lastname 
+                + ", phone=" + phone 
+                + ", role=" + role 
+                + '}';
     }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-     
+    
 }
